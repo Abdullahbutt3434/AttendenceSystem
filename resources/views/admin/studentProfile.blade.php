@@ -23,9 +23,8 @@
                                                     <p class="card-text"><strong>Absent: </strong> {{$aCount}} </p>
                                                     <p class="card-text"><strong>Leaves: </strong> {{$lCount}} </p>
                                                     <div>
-                                                        <form action="{{route('addAttendence', $user->id)}}" method="POST">
-                                                            @csrf
-                                                            <input type="submit" class="btn btn-primary btn-sm" name="addAttendence" value="Add Attendene">
+                                                        <form action="{{route('addAttendence', $user->id)}}" method="GET">
+                                                            <button type="submit" class="btn btn-primary btn-sm">Add Attendene</button>
                                                         </form>
                                                     </div>
 

@@ -14,10 +14,8 @@
                             <div class="card-body p-3" >
                                 <h5 class="card-title">{{$users->name}}</h5>
                                 <p class="card-text">Registration Number: {{$users->RegNo}}</p>
-                                <form action="{{route('viewStudent' , $users->id)}}" method="POST">
-                                    @csrf
-                                    @method('GET')
-                                <input type="submit" class="btn btn-primary" value="View Profile">
+                                <form action="{{route('viewStudent' , $users->id)}}" method="GET">
+                                    <button type="submit" class="btn btn-primary">View Profile</button>
                                 </form>
                             </div>
                         </div>

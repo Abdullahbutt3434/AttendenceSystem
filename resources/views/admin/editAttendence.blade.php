@@ -38,7 +38,7 @@
                                                         </div>
                                                         <input type="text" name="user_id" value="{{$user->id}}" hidden>
                                                         <div class="form-group">
-                                                            <input type="submit" class="btn btn-lg btn-primary"   value="{{isset($att_id)?"Update":"Add Attendence"}}">
+                                                            <button type="submit" class="btn btn-lg btn-primary" >{{isset($att_id)?"Update":"Add Attendence"}}</button>
                                                         </div>
 
                                                     </form>

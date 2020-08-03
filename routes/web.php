@@ -33,8 +33,9 @@ Route::get('/totalleaves', 'AdminController@leaveRequest')->name('leavesR');
 Route::post('/acceptleave/{id}/{date}', 'AdminController@acceptLeave')->name('acceptLeave');
 Route::post('/rejectleave/{id}/{date}', 'AdminController@rejectLeave')->name('rejectLeave');
 Route::get('/editattendence/{id}', 'AdminController@editAttendence')->name('editAttendence');
+Route::post('/updateattendence/{id}', 'AdminController@updateAttendence')->name('updateAttendence');
 Route::put('/updateattendence/{id}', 'AdminController@updateAttendence')->name('updateAttendence');
-Route::post('/addattendence/{id}', 'AdminController@addAttendence')->name('addAttendence');
+Route::get('/addattendence/{id}', 'AdminController@addAttendence')->name('addAttendence');
 Route::post('/storeattendence', 'AdminController@storeAttendence')->name('storeAttendence');
 Route::post('/deleteattendence/{id}', 'AdminController@deleteAttendence')->name('deleteAttendence');
 

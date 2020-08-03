@@ -7,6 +7,7 @@ use App\Http\Requests\attendence\CreateAttendenceRequest;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -18,7 +19,6 @@ class AdminController extends Controller
 
 
     public function viewStudent($id){
-
         $user = DB::table('users')->where('id', $id )->get();
         $present = DB::table('attendences')->where('user_id', $id)->where('presence', 'present')->get();
         $absent = DB::table('attendences')->where('user_id', $id)->where('presence', 'absent')->get();
@@ -98,7 +98,7 @@ class AdminController extends Controller
     }
 
     public function storeAttendence(Request $request){
-
+            dd('here');
         $attend = DB::table('attendences')->where('user_id', $request->user_id)
             ->where('date',$request->date)
             ->get();
