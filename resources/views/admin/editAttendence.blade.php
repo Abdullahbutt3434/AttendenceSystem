@@ -20,6 +20,7 @@
 
                                                     <form action="{{isset($att_id) ? route('updateAttendence' , [$att_id->id] ): route('storeAttendence')}}" method="POST">
                                                         @csrf
+
                                                         @if(isset($att_id))
                                                             @method('PUT')
                                                         @endif

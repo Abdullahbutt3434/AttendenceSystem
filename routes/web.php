@@ -25,7 +25,7 @@ Route::post('user', 'UserController@store');
 Route::resource('user', 'UserController');
 Route::resource('admin', 'AdminController');
 Route::get('/vattendence', 'UserController@viewAttendence')->name('viewAttendence');
-Route::post('/leaverequest', 'UserController@leaveRequest')->name('leaveRequest');
+Route::get('/leaverequest', 'UserController@leaveRequest')->name('leaveRequest');
 Route::get('/profile', 'UserController@viewProfile')->name('viewProfile');
 Route::get('/allStudents', 'AdminController@viewAllStudents')->name('viewAllStudents');
 Route::get('/student/{id}', 'AdminController@viewStudent')->name('viewStudent');

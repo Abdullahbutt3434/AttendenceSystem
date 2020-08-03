@@ -13,8 +13,6 @@ class AdminController extends Controller
 {
     public function viewAllStudents(){
         $user = DB::table('users')->where('role', 'student')->get();
-//        dd($user);
-
         return view('admin.allStudents')->with('users' , $user);
     }
 
@@ -99,13 +97,17 @@ class AdminController extends Controller
         return view('admin.editAttendence')->with('user',$user[0]);
     }
 
-    public function storeAttendence(Request $request){s
+    public function storeAttendence(Request $request){
+
         $attend = DB::table('attendences')->where('user_id', $request->user_id)
             ->where('date',$request->date)
             ->get();
+
         if(($attend)->isEmpty()){
+//            your fix
+//            cast string to int
             Attendence::create([
-                'user_id' =>$request->user_id,
+                'user_id' =>(int)$request->user_id,
                 'presence'=>$request->presence,
                 'date'=>$request->date
             ]);
