@@ -97,8 +97,8 @@ class AdminController extends Controller
         return view('admin.editAttendence')->with('user',$user[0]);
     }
 
-    public function storeAttendence(Request $request){
-            dd('here');
+    public function storeAttendence(CreateAttendenceRequest $request){
+
         $attend = DB::table('attendences')->where('user_id', $request->user_id)
             ->where('date',$request->date)
             ->get();
